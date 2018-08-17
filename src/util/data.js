@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { spaceman, telescope, rocket, twinkle, halfmoon, ufo } from '../images/icon/index';
 
 
@@ -9,7 +10,6 @@ const profile = {
   title: 'Profile',
   subtitle: 'Front End Software Developer looking for new opportunities in Dublin, Ireland. My area of expertise lies in Javascript and React but I have passion for interface technologies beyond the browser.',
   text: `
-        My background in Fine Art and Computer Science gives me a rich, unique and varied range of skills.
         I am a maker at heart who is happiest covered head to toe in glitter, paint and LEDs.
         The most important thing for me is to work with smart and creative people who inspire me. 
         I genuinely enjoy peer programming and code reviews as part of a healthy and happy team.
@@ -23,24 +23,12 @@ const profile = {
 const experience = {
   title: 'Experience',
   text: [
-    {
-      role: 'Software Engineer',
-      location: 'The Dock, Accenture',
-      dates: '2016 - Current',
-      description: `This role requires me to be multidisciplinary in my skillset, knowledgeable about new technologies and 
-                highly collaborative. The Dock is an innovation research and development centre for an entire global business.`
-    },
-    {
-      role: 'Coder Dojo Mentor',
-      location: 'Coder Dojo Foundation',
-      dates: '2016 - Current',
-      description: `I set up the Robotics module for the Silicon Docks Dojo and two of my ninjas are finalists in the Digital Girl of the Year Award. 
-                I’ve learnt a lot during my time teaching at the Dojo.`
-    }
+    `I’ve had an unconventional journey; I have an undergraduate degree in Fine Art and Art History and an MSc. in Computer Science.`,
+    `In 2016 took a role as a Software Engineer at Accenture’s new state of the art Research and Development centre in Grand Canal Dock. It's a role that required me to be highly collaborative and innovative. Although I technically lived in the Front End Guild, every day was different and I found myself working with everything from 3D printing to Voice UI to IOT to Wearables.`,
+    `It was through Accenture that I started mentoring with Coder Dojo. I am incredibly proud of my work with the Dojo; two ninjas I mentored went on to win European Digital Girl of the year in 2017 and in May 2018 I spoke on a panel at Coolest Projects.`,
+    `I’m passionate about technology and reaching out to the next generation of women in Tech. I’ve written some blogs about my experiences so far  which you can read below`
   ],
-  icon: rocket,
-  isListing: true,
-  fullSize: true
+  icon: rocket
 };
 
 const education = {
