@@ -10,32 +10,38 @@ import Experience from './experience';
 
 const AppWrapper = styled.div`
     text-align: center;
-    padding: 1rem;
-    margin: 10rem auto 0 auto;
-    width: 90%;
     display: grid;
-    grid-gap: 20px 75px;
-    grid-template-rows: 50em 20em 20em;
+    grid-gap: 25px;
 `
 
 const AppHeader = styled.div`
-    height: 100vh;
 //   color: ${props => props.theme.dark};
-//   background-color: ${props => props.theme.primary};
   grid-column: 1 / 1;
   grid-row: 1 / 3;
+  padding: 1rem;
+  margin: 15rem auto;
+  width: 90%;
+`
+
+const AppIntroBackground = styled.div`
+  // grid-column: 1 / 1;
+  // grid-row: 3 / 3;
+  // background-color: #23A6D5;
 `
 
 const AppIntro = styled.div`
   grid-column: 1 / 1;
-  grid-row: 2 / 3;
-
+  grid-row: 3 / 3;
+  padding: 1rem;
+  width: 90%;
+  margin: auto;
 `
 
 const AppSection = styled.div`
   padding-top: 5%;
-  grid-column: 1 / 1;
-  grid-row: 3 / 3;
+  padding: 1rem;
+  margin: auto;
+  width: 90%;
 
 `
 
@@ -48,9 +54,11 @@ export default class HomePage extends Component {
           <AppHeader>
             <Splash />
           </AppHeader>
-          <AppIntro>
-            <Profile data={sectionsArray[0]}/>
-          </AppIntro>
+          <AppIntroBackground>
+            <AppIntro>
+              <Profile data={sectionsArray[0]}/>
+            </AppIntro>
+          </AppIntroBackground>
           <AppSection>
             <Experience data={sectionsArray[1]} />
           </AppSection>

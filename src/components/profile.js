@@ -8,11 +8,11 @@ import SectionContent from './section/sectionContent';
 
 const ProfileWrapper = styled.div`
   display: grid;
-  grid-gap: 20px 75px;
+  grid-gap: 25px;
 `
 
 const ProfilePic = styled.img`
-  height: 300px;
+  width: 100%;
   grid-column: 1 / 1;
   grid-row: 1 / 4;
 `
@@ -31,18 +31,12 @@ const ProfileContent = styled.div`
 const SectionSubtitle = styled.div`
   font-family: Josefin Slab Bold, Arial, Verdana, sans-serif;
   padding-top: 15px;
-
-`
-
-const ExtraContent = styled.div`
-  font-family: Josefin Slab, Arial, Verdana, sans-serif;
-  padding-top: 15px;
 `
 
 export default class Profile extends React.Component {
 
   render() {
-    const { title, subtitle, icon, text, blogs } = this.props.data;
+    const { title, subtitle, icon, text } = this.props.data;
     return (
       <ProfileWrapper>
         <ProfilePic src={profileImg} alt="profile picture" />
