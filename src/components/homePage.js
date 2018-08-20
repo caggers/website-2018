@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { theme1 } from '../theme/globalStyle';
 import { sectionsArray  } from '../util/data';
+import debounce from 'lodash/debounce';
 
 import Profile from './profile';
 import Splash from './splash';
@@ -15,7 +16,6 @@ const AppWrapper = styled.div`
 `
 
 const AppHeader = styled.div`
-//   color: ${props => props.theme.dark};
   grid-column: 1 / 1;
   grid-row: 1 / 3;
   padding: 1rem;
@@ -42,10 +42,29 @@ const AppSection = styled.div`
   padding: 1rem;
   margin: auto;
   width: 90%;
-
-`
+`;
 
 export default class HomePage extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      isMobile: null,
+    };
+  }
+
+  componentDidMount() {
+    this.checkForScreenWidth();
+  }
+
+  checkForScreenWidth = debounce((e) => {
+    window.addEventListener("resize", this.resize.bind(this));
+    this.resize();
+  }, 1000);
+
+  resize = (() => {
+    this.setState({isMobile: window.innerWidth <= 760});
+  });
 
   render() {
     return (
@@ -56,14 +75,12 @@ export default class HomePage extends Component {
           </AppHeader>
           <AppIntroBackground>
             <AppIntro>
-              <Profile data={sectionsArray[0]}/>
+              <Profile data={sectionsArray[0]} isMobile={this.state.isMobile} />
             </AppIntro>
           </AppIntroBackground>
           <AppSection>
-            <Experience data={sectionsArray[1]} />
+            <Experience data={sectionsArray[1]} isMobile={this.state.isMobile}/>
           </AppSection>
-          {/* <Button>Normal Button</Button>
-          <Button primary>Primary Button</Button> */}
         </AppWrapper>
       </ThemeProvider>
     );
