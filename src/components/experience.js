@@ -41,9 +41,6 @@ const CoderDojoImg = styled.img`
     grid-column: 1 / 1;
     grid-row: 5 / 6;
   `}
-  ${props => props.innerWidth < '860' && css`
-    display: none;
-  `}
 `
 
 export default class Experience extends React.Component {

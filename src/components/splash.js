@@ -28,11 +28,11 @@ const SplashWrapper = styled.div`
   -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
 
-  -webkit-animation: ${AnimateGradient} 10s ease infinite;
-  -ms-animation: ${AnimateGradient} 10s ease infinite;
-  -moz-animation: ${AnimateGradient} 10s ease infinite;
-  -o-animation: ${AnimateGradient} 10s ease infinite;
-  animation: ${AnimateGradient} 10s ease infinite;
+  -webkit-animation: ${AnimateGradient} 5s ease infinite;
+  -ms-animation: ${AnimateGradient} 5s ease infinite;
+  -moz-animation: ${AnimateGradient} 5s ease infinite;
+  -o-animation: ${AnimateGradient} 5s ease infinite;
+  animation: ${AnimateGradient} 5s ease infinite;
 `
 
 const Splash = () => (
