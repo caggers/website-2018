@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 
 import profileImg from '../images/profile-pic.png';
@@ -12,20 +12,36 @@ const ProfileWrapper = styled.div`
 `
 
 const ProfilePic = styled.img`
-  width: 100%;
+  width: 250px;
   grid-column: 1 / 1;
   grid-row: 1 / 4;
+  ${props => props.isMobile && css`
+    grid-column: 1 / 1;
+    grid-row: 1 / 2;
+    width: 60%;
+    margin: auto;
+  `}
 `
 const ProfileTitle = styled.div`
   grid-column: 2 / 6;
   grid-row: 1 / 1;
   text-align: left;
+
+  ${props => props.isMobile && css`
+    grid-column: 1 / 1;
+    grid-row: 3 / 4;
+  `}
 `
 
 const ProfileContent = styled.div`
   grid-column: 2 / 6;
   grid-row: 2 / 4;
   text-align: left;
+
+  ${props => props.isMobile && css`
+    grid-column: 1 / 1;
+    grid-row: 5 / 6;
+  `}
 `
 
 const SectionSubtitle = styled.div`
@@ -39,20 +55,19 @@ export default class Profile extends React.Component {
     const { title, subtitle, icon, text } = this.props.data;
     return (
       <ProfileWrapper>
-        <ProfilePic src={profileImg} alt="profile picture" />
-        <ProfileTitle>
+        <ProfilePic isMobile={this.props.isMobile} src={profileImg} alt="profile picture" />
+        <ProfileTitle isMobile={this.props.isMobile} color={this.props.color}>
           <SectionHeader title={title} icon={icon}/>
           <SectionSubtitle>
             {subtitle}
           </SectionSubtitle>
         </ProfileTitle>
-        <ProfileContent>
+        <ProfileContent isMobile={this.props.isMobile}>
           <SectionContent content={text} />
         </ProfileContent>
       </ProfileWrapper>
     );
   }
-
 }
 
 Profile.propTypes = {
@@ -61,7 +76,8 @@ Profile.propTypes = {
     subtitle: PropTypes.string,
     text: PropTypes.string,
     icon: PropTypes.string,
-    blogs: PropTypes.arrayOf(PropTypes.string)
+    blogs: PropTypes.arrayOf(PropTypes.string),
+    isMobile: PropTypes.bool,
   } )
 }
 
