@@ -56,7 +56,7 @@ export default class Profile extends React.Component {
     return (
       <ProfileWrapper>
         <ProfilePic isMobile={this.props.isMobile} src={profileImg} alt="profile picture" />
-        <ProfileTitle isMobile={this.props.isMobile} color={this.props.color}>
+        <ProfileTitle isMobile={this.props.isMobile} >
           <SectionHeader title={title} icon={icon}/>
           <SectionSubtitle>
             {subtitle}
@@ -77,7 +77,7 @@ Profile.propTypes = {
     text: PropTypes.string,
     icon: PropTypes.string,
     blogs: PropTypes.arrayOf(PropTypes.string),
-    isMobile: PropTypes.bool,
-  } )
+  }),
+  isMobile: PropTypes.bool,
 }
 

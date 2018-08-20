@@ -50,6 +50,7 @@ export default class HomePage extends Component {
     super(props);
     this.state = {
       isMobile: null,
+      innerWidth: null
     };
   }
 
@@ -57,16 +58,20 @@ export default class HomePage extends Component {
     this.checkForScreenWidth();
   }
 
-  checkForScreenWidth = debounce((e) => {
-    window.addEventListener("resize", this.resize.bind(this));
+  checkForScreenWidth = debounce(() => {
+    window.addEventListener('resize', this.resize.bind(this));
     this.resize();
   }, 1000);
 
   resize = (() => {
-    this.setState({isMobile: window.innerWidth <= 760});
+    this.setState({
+      innerWidth: window.innerWidth,
+      isMobile: window.innerWidth <= 760
+    });
   });
 
   render() {
+    const {isMobile, innerWidth} = this.state;
     return (
       <ThemeProvider theme={theme1}>
         <AppWrapper>
@@ -75,11 +80,11 @@ export default class HomePage extends Component {
           </AppHeader>
           <AppIntroBackground>
             <AppIntro>
-              <Profile data={sectionsArray[0]} isMobile={this.state.isMobile} />
+              <Profile data={sectionsArray[0]} isMobile={isMobile} />
             </AppIntro>
           </AppIntroBackground>
           <AppSection>
-            <Experience data={sectionsArray[1]} isMobile={this.state.isMobile}/>
+            <Experience data={sectionsArray[1]} isMobile={isMobile} innerWidth={innerWidth}/>
           </AppSection>
         </AppWrapper>
       </ThemeProvider>
