@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import SectionHeader from './section/sectionHeader';
 import SectionContent from './section/sectionContent';
 import coderDojo from '../images/coder-dojo.jpg';
+import { blogsArray } from '../util/data';
 
 const ExperienceWrapper = styled.div`
   display: grid;
@@ -43,6 +44,22 @@ const CoderDojoImg = styled.img`
   `}
 `
 
+const ExperienceBlogs = styled.div`
+  li {
+    list-style: none;
+    text-decoration: none;
+    font-family: Josefin Slab;
+    padding-top: 5px;
+    a, a:active, a:hover, a:visited {
+      color: #6A86FE;
+    }
+    a:active, a:hover {
+      color: #B721FF;
+    }
+  }
+
+`
+
 export default class Experience extends React.Component {
   render() {
     const { title, icon, text } = this.props.data;
@@ -56,6 +73,13 @@ export default class Experience extends React.Component {
           {text.map((item, i) =>
             <SectionContent content={item} key={i}/>
           )}
+          <ExperienceBlogs>
+            {blogsArray.map((item, i) => 
+              <li key={i}>
+                <a href={item.href}>{item.title}</a>
+              </li>
+            )}
+        </ExperienceBlogs>
         </ExperienceContent>
         <CoderDojoImg 
           src={coderDojo} 
@@ -75,5 +99,5 @@ Experience.propTypes = {
     text: PropTypes.arrayOf(PropTypes.string),
   }),
   isMobile: PropTypes.bool,
-  innerWidth: PropTypes.string
+  innerWidth: PropTypes.number
 }

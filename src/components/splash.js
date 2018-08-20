@@ -9,7 +9,7 @@ const AnimateGradient = keyframes`
 100% { background-position: 0% 50% }
 `
 
-const SplashWrapper = styled.div`
+const SplashWrapper = styled.h1`
   font-family: AmaticSC, sans-serif;
   font-size: 6rem;
   font-weight: 300;
