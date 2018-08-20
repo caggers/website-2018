@@ -12,7 +12,7 @@ const ExperienceWrapper = styled.div`
 `
 
 const ExperienceTitle = styled.div`
-  grid-column: 1 / 8;
+  grid-column: 1 / 6;
   grid-row: 1 / 1;
   text-align: left;
   ${props => props.isMobile && css`
@@ -23,7 +23,7 @@ const ExperienceTitle = styled.div`
 `
 
 const ExperienceContent = styled.div`
-  grid-column: 1 / 4;
+  grid-column: 1 / 3;
   grid-row: 2 / 4;
   text-align: left;
   ${props => props.isMobile && css`
@@ -34,33 +34,41 @@ const ExperienceContent = styled.div`
 
 const CoderDojoImg = styled.img`
   width: 95%;
-  grid-column: 5 / 8;
+  grid-column: 4 / 6;
   grid-row: 2 / 6;
   margin: auto;
   ${props => props.isMobile && css`
     grid-column: 1 / 1;
     grid-row: 5 / 6;
   `}
+  ${props => props.innerWidth < '860' && css`
+    display: none;
+  `}
 `
 
 export default class Experience extends React.Component {
   render() {
     const { title, icon, text } = this.props.data;
+    const {  innerWidth, isMobile } = this.props;
     return (
       <ExperienceWrapper>
-        <ExperienceTitle isMobile={this.props.isMobile}>
+        <ExperienceTitle isMobile={isMobile}>
           <SectionHeader title={title} icon={icon}/>
         </ExperienceTitle>
-        <ExperienceContent isMobile={this.props.isMobile}>
+        <ExperienceContent isMobile={isMobile}>
           {text.map((item, i) =>
             <SectionContent content={item} key={i}/>
           )}
         </ExperienceContent>
-        <CoderDojoImg src={coderDojo} alt="Me on stage" isMobile={this.props.isMobile} />
+        <CoderDojoImg 
+          src={coderDojo} 
+          alt="Me on stage" 
+          isMobile={isMobile}
+          innerWidth={innerWidth}
+        />
       </ExperienceWrapper>
     );
   }
-
 }
 
 Experience.propTypes = {
@@ -68,6 +76,7 @@ Experience.propTypes = {
     title: PropTypes.string,
     icon: PropTypes.string,
     text: PropTypes.arrayOf(PropTypes.string),
-    isMobile: PropTypes.bool,
-  } )
+  }),
+  isMobile: PropTypes.bool,
+  innerWidth: PropTypes.string
 }
