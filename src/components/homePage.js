@@ -14,18 +14,19 @@ const AppWrapper = styled.div`
   text-align: center;
   display: grid;
   grid-gap: 25px;
+  grid-template-rows: 50% 0.4fr 0.6fr 1fr 0.05fr;
 `
 
 const AppHeader = styled.div`
   grid-column: 1 / 1;
-  grid-row: 1 / 3;
+  grid-row: 1 / 1;
   margin: 5rem auto;
   width: 80%;
 `
 
 const AppIntro = styled.div`
   grid-column: 1 / 1;
-  grid-row: 3 / 3;
+  grid-row: 2 / 2;
   width: 80%;
   margin: auto;
 `
@@ -38,12 +39,12 @@ const AppSection = styled.div`
 
 const AppSectionOne = styled.div`
   grid-column: 1 / 1;
-  grid-row: 4 / 4;
+  grid-row: 3 / 3;
 `
 
 const AppSectionTwoBG = styled.div`
   grid-column: 1 / 1;
-  grid-row: 5 / 5;
+  grid-row: 4 / 4;
   height: 500px;
   background: -webkit-linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
   background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
@@ -51,7 +52,7 @@ const AppSectionTwoBG = styled.div`
 
 const AppSectionTwo = styled.div`
   grid-column: 1 / 1;
-  grid-row: 5 / 6;
+  grid-row: 4 / 5;
 `
 
 const AppSectionThree = styled.div`
