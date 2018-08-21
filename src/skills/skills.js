@@ -57,7 +57,6 @@ const SkillsSectionThree = styled.div`
 export default class Skills extends React.Component {
   render() {
     const { isMobile } = this.props;
-    console.log(isMobile);
     return (
       <SkillsWrapper className="skills-wrapper">
         <SkillsHeader className="skills-header">

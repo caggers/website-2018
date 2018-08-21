@@ -68,7 +68,7 @@ SkillsColumn.propTypes = {
     subtitle: PropTypes.string,
     text: PropTypes.string,
     icon: PropTypes.string,
-    blogs: PropTypes.arrayOf(PropTypes.string),
+    skills: PropTypes.arrayOf(PropTypes.string)
   }),
   isMobile: PropTypes.bool
 }

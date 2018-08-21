@@ -58,7 +58,7 @@ export default class Profile extends React.Component {
       <ProfileWrapper>
         <ProfilePic isMobile={isMobile} src={profileImg} alt="profile picture" />
         <ProfileTitle isMobile={isMobile} >
-        <SectionHeader 
+          <SectionHeader 
             title={title} 
             icon={icon} 
             colourFont='black' 

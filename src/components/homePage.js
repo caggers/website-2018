@@ -19,7 +19,7 @@ const AppWrapper = styled.div`
 const AppHeader = styled.div`
   grid-column: 1 / 1;
   grid-row: 1 / 3;
-  margin: 15rem auto;
+  margin: 5rem auto;
   width: 80%;
 `
 
@@ -57,6 +57,9 @@ const AppSectionTwo = styled.div`
 const AppSectionThree = styled.div`
   background: -webkit-linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
   background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  text-align: center;
+  color: white;
+  padding: 0;
 `
   ;
 
@@ -122,11 +125,9 @@ export default class HomePage extends Component {
         </AppSectionTwo>
 
 
-        {/* <AppSectionThree>
-            <AppSection>
-
-            </AppSection>
-          </AppSectionThree> */}
+        <AppSectionThree>
+          <p>Gemma Cagney</p>
+        </AppSectionThree>
 
       </AppWrapper>
     );
