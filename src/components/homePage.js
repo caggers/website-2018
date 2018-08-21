@@ -114,8 +114,8 @@ export default class HomePage extends Component {
           </AppSection>
         </AppSectionOne>
 
-        <AppSectionTwoBG className="app-section-two-bg">
-        </AppSectionTwoBG>
+        <AppSectionTwoBG className="app-section-two-bg" />
+
         <AppSectionTwo className="app-section-two">
           <AppSection className="app-section-two-content">
             <Skills
@@ -126,7 +126,7 @@ export default class HomePage extends Component {
 
 
         <AppSectionThree>
-          <p>Gemma Cagney</p>
+          <p>Handcrafted by me &#169; 2018 using React and styled-components</p>
         </AppSectionThree>
 
       </AppWrapper>
