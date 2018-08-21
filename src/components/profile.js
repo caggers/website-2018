@@ -60,9 +60,7 @@ export default class Profile extends React.Component {
         <ProfileTitle isMobile={isMobile} >
           <SectionHeader 
             title={title} 
-            icon={icon} 
-            colourFont='black' 
-            colourBorder='#6A86FE'
+            icon={icon}
           />
           <SectionSubtitle>
             {subtitle}

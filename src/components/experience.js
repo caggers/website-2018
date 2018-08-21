@@ -69,9 +69,7 @@ export default class Experience extends React.Component {
         <ExperienceTitle isMobile={isMobile}>
           <SectionHeader 
             title={title} 
-            icon={icon} 
-            colourFont='black' 
-            colourBorder='#6A86FE'
+            icon={icon}
           />
         </ExperienceTitle>
         <ExperienceContent isMobile={isMobile}>

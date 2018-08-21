@@ -8,7 +8,7 @@ const SectionHeaderWrapper = styled.div`
 
 const Row = styled.h3.attrs({
   color: props => props.colourFont || 'black',
-  borderColor: props => props.colourBorder || 'black'
+  'border-color': props => props.colourBorder || 'black'
 })`
   margin: 0;
   color: ${props => props.colourFont};
