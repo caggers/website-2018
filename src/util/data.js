@@ -25,25 +25,6 @@ const experience = {
   icon: rocket
 };
 
-const education = {
-  title: 'Education',
-  text: [
-    {
-      role: 'MSc. Interactive Digital Media',
-      location: 'School of Computer Science and Statistics, Trinity College Dublin',
-      dates: '2014 - 2015',
-    },
-    {
-      role: 'BA(Hons) Fine Art and Art History',
-      location: 'School of Art, Design and Architecture, Kingston University, UK',
-      dates: '2011 - 2014',
-    }
-  ],
-  icon: telescope,
-  isListing: true,
-  fullSize: true
-};
-
 const networkBlog = {
   href: 'https://coderdojo.com/news/2017/05/30/building-a-network-to-support-female-mentors-and-ninjas/',
   title: 'Building a Network to Support Female Mentors and Ninjas',
@@ -67,73 +48,39 @@ const wwcBlog = {
 
 export const blogsArray = [creativityBlog, networkBlog, environmentBlog, wwcBlog];
 
-export const skillsObject = {
+const devObject = {
   title: 'Development',
+  subtitle: 'Dev Tools',
+  text: `I'm interested in how things work and implementing UIs whether they're screen based or otherwise.`,
   icon: twinkle,
-  skills: [
-    {
-      label: 'JavaScript',
-      value: 75
-    },
-    {
-      label: 'React',
-      value: 75
-    },
-    {
-      label: 'Angular 2+',
-      value: 60
-    },
-    {
-      label: 'ECMAScript',
-      value: 70
-    },
-    {
-      label: 'TypeScript',
-      value: 75
-    },
-    {
-      label: 'Python',
-      value: 60
-    },
-    {
-      label: 'Voice UI',
-      value: 50
-    },
-    {
-      label: 'HTML5',
-      value: 100
-    },
-    {
-      label: 'CSS/SCSS',
-      value: 80
-    },
-    {
-      label: 'Bootstrap',
-      value: 90
-    }
-  ],
-  fullSize: false
-};
+  skills: [ 'JavaScript', 'React', 'ECMAScript', 'TypeScript', 'Python', 'Voice UI',
+            'HTML5', 'CSS/SCSS', 'Bootstrap', 'Git', 'Continuous Integration', 'Amazon Web Services',
+            'VSCode', 'IntelliJ']
+}
 
-export const designObject = {
+const designObject = {
   title: 'Design',
+  subtitle: 'Design Tools',
+  text: `I work primarily in the Front End because I enjoy watching ideas in my head come to life visually. `,
   icon: halfmoon,
   skills: [
-    'Sketch', 'Illustrator', 'Premiere Pro', 'Final Cut', 'Photoshop', '3D Modelling',
+    'Sketch', 'Illustrator', 'Premiere Pro', 'Final Cut', 'Photoshop', 
     'Web Design', 'User Experience Design', 'User Interface Design', 'Voice Interface Design',
-    'Hand Lettering'
-  ],
-  fullSize: false
+    'Balsamiq', 'InVision', '3D Modelling', 'Typography'
+  ]
 };
 
-export const otherObject = {
-  title: 'Other things I know about',
+const otherObject = {
+  title: 'And more...',
+  text: `You never know what obscure skill is going to come in handy in the ever-changing world of Tech!`,
+  subtitle: 'Other Tools',
   icon: ufo,
   skills: [
-    'Agile and Scrum Methodologies', 'Critical Thinking', 'Problem Solving', 'Excellent Writing Skills', 'Design Thinking',
-    'Raspberry Pi', 'Arduino', 'Adafruit', 'Sensor Technologies', 'IOT', '3D Printing', 'TCP/IP Networks', 'Fine Art'
-  ],
-  fullSize: false
+    'Agile', 'SCRUM', 'Critical Thinking', 'Problem Solving', 'Copywriting/Written Skills', 'Design Thinking',
+    'Raspberry Pi', 'Arduino', 'Adafruit', 'Sensor Technologies', 'IOT', '3D Printing', 'TCP/IP Networks', 'Fine Art', 'Hand Lettering'
+  ]
 };
 
-export const sectionsArray = [profile, experience, education];
+export const skillsArry = [devObject, designObject, otherObject];
+
+export const sectionsArray = [profile, experience];

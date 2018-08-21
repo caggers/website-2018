@@ -67,7 +67,10 @@ export default class Experience extends React.Component {
     return (
       <ExperienceWrapper>
         <ExperienceTitle isMobile={isMobile}>
-          <SectionHeader title={title} icon={icon}/>
+          <SectionHeader 
+            title={title} 
+            icon={icon}
+          />
         </ExperienceTitle>
         <ExperienceContent isMobile={isMobile}>
           {text.map((item, i) =>
@@ -79,7 +82,7 @@ export default class Experience extends React.Component {
                 <a href={item.href}>{item.title}</a>
               </li>
             )}
-        </ExperienceBlogs>
+          </ExperienceBlogs>
         </ExperienceContent>
         <CoderDojoImg 
           src={coderDojo} 
