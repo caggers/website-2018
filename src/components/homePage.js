@@ -1,48 +1,64 @@
 import React, { Component } from 'react';
 
-import styled, { ThemeProvider } from 'styled-components';
-import { theme1 } from '../theme/globalStyle';
-import { sectionsArray  } from '../util/data';
+import styled from 'styled-components';
+import { sectionsArray } from '../util/data';
 import debounce from 'lodash/debounce';
+import { } from '../theme/globalStyle';
 
 import Profile from './profile';
 import Splash from './splash';
 import Experience from './experience';
+import Skills from '../skills/skills';
 
 const AppWrapper = styled.div`
-    text-align: center;
-    display: grid;
-    grid-gap: 25px;
+  text-align: center;
+  display: grid;
+  grid-gap: 25px;
 `
 
 const AppHeader = styled.div`
   grid-column: 1 / 1;
   grid-row: 1 / 3;
-  padding: 1rem;
   margin: 15rem auto;
-  width: 90%;
-`
-
-const AppIntroBackground = styled.div`
-  // grid-column: 1 / 1;
-  // grid-row: 3 / 3;
-  // background-color: #23A6D5;
+  width: 80%;
 `
 
 const AppIntro = styled.div`
   grid-column: 1 / 1;
   grid-row: 3 / 3;
-  padding: 1rem;
-  width: 90%;
+  width: 80%;
   margin: auto;
 `
 
 const AppSection = styled.div`
   padding-top: 5%;
-  padding: 1rem;
   margin: auto;
-  width: 90%;
-`;
+  width: 80%;
+`
+
+const AppSectionOne = styled.div`
+  grid-column: 1 / 1;
+  grid-row: 4 / 4;
+`
+
+const AppSectionTwoBG = styled.div`
+  grid-column: 1 / 1;
+  grid-row: 5 / 5;
+  height: 500px;
+  background: -webkit-linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+`
+
+const AppSectionTwo = styled.div`
+  grid-column: 1 / 1;
+  grid-row: 5 / 6;
+`
+
+const AppSectionThree = styled.div`
+  background: -webkit-linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+`
+  ;
 
 export default class HomePage extends Component {
 
@@ -66,28 +82,53 @@ export default class HomePage extends Component {
   resize = (() => {
     this.setState({
       innerWidth: window.innerWidth,
-      isMobile: window.innerWidth <= 760
+      isMobile: window.innerWidth <= 780
     });
   });
 
   render() {
-    const {isMobile, innerWidth} = this.state;
+    const { isMobile, innerWidth } = this.state;
     return (
-      <ThemeProvider theme={theme1}>
-        <AppWrapper>
-          <AppHeader>
-            <Splash />
-          </AppHeader>
-          <AppIntroBackground>
-            <AppIntro>
-              <Profile data={sectionsArray[0]} isMobile={isMobile} />
-            </AppIntro>
-          </AppIntroBackground>
+      <AppWrapper className="app-wrapper">
+        <AppHeader className="app-header">
+          <Splash className="splash"/>
+        </AppHeader>
+
+        <AppIntro className="app-intro">
+          <Profile 
+            data={sectionsArray[0]} 
+            isMobile={isMobile} 
+          />
+        </AppIntro>
+
+        <AppSectionOne className="app-section-one">
           <AppSection>
-            <Experience data={sectionsArray[1]} isMobile={isMobile} innerWidth={innerWidth}/>
+            <Experience 
+              data={sectionsArray[1]} 
+              isMobile={isMobile} 
+              innerWidth={innerWidth} 
+            />
           </AppSection>
-        </AppWrapper>
-      </ThemeProvider>
+        </AppSectionOne>
+
+        <AppSectionTwoBG className="app-section-two-bg">
+        </AppSectionTwoBG>
+        <AppSectionTwo className="app-section-two">
+          <AppSection className="app-section-two-content">
+            <Skills
+              isMobile={isMobile} 
+            />
+          </AppSection>
+        </AppSectionTwo>
+
+
+        {/* <AppSectionThree>
+            <AppSection>
+
+            </AppSection>
+          </AppSectionThree> */}
+
+      </AppWrapper>
     );
   }
 } 

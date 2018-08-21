@@ -6,15 +6,20 @@ const SectionHeaderWrapper = styled.div`
   display: grid;
 `
 
-const Row = styled.h3`
+const Row = styled.h3.attrs({
+  color: props => props.colourFont || 'black',
+  borderColor: props => props.colourBorder || 'black'
+})`
   margin: 0;
+  color: ${props => props.colourFont};
   font-weight: 300;
   font-size: 3rem;
   font-family: AmaticSC, sans-serif;
     &:after {
       content:' ';
       display:block;
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid;
+      border-color: ${props => props.colourBorder};
     }
 `
 
@@ -23,9 +28,9 @@ const Icon = styled.img`
   width: 25px;
 `
 
-const SectionHeader = ({title, icon}) => (
+const SectionHeader = ({title, icon, colourBorder, colourFont}) => (
   <SectionHeaderWrapper>
-    <Row>
+    <Row colourBorder={colourBorder} colourFont={colourFont}>
       <Icon src={icon} alt="title icon"  />
       {title}
     </Row>
@@ -36,5 +41,7 @@ export default SectionHeader;
 
 SectionHeader.propTypes = {
   title: PropTypes.string,
-  icon: PropTypes.string
+  icon: PropTypes.string,
+  colourFont: PropTypes.string,
+  colourBorder: PropTypes.string,
 }

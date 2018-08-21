@@ -53,16 +53,22 @@ export default class Profile extends React.Component {
 
   render() {
     const { title, subtitle, icon, text } = this.props.data;
+    const { isMobile } = this.props;
     return (
       <ProfileWrapper>
-        <ProfilePic isMobile={this.props.isMobile} src={profileImg} alt="profile picture" />
-        <ProfileTitle isMobile={this.props.isMobile} >
-          <SectionHeader title={title} icon={icon}/>
+        <ProfilePic isMobile={isMobile} src={profileImg} alt="profile picture" />
+        <ProfileTitle isMobile={isMobile} >
+        <SectionHeader 
+            title={title} 
+            icon={icon} 
+            colourFont='black' 
+            colourBorder='#6A86FE'
+          />
           <SectionSubtitle>
             {subtitle}
           </SectionSubtitle>
         </ProfileTitle>
-        <ProfileContent isMobile={this.props.isMobile}>
+        <ProfileContent isMobile={isMobile}>
           <SectionContent content={text} />
         </ProfileContent>
       </ProfileWrapper>
