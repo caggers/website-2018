@@ -3,7 +3,7 @@ import styled, {css} from 'styled-components';
 import PropTypes from 'prop-types';
 
 import SkillsColumn from './skillsColumn';
-import { skillsArry } from '../util/data';
+import { skillsArry } from '../../util/data';
 
 const SkillsWrapper = styled.div`
   

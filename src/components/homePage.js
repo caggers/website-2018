@@ -8,7 +8,7 @@ import { } from '../theme/globalStyle';
 import Profile from './profile';
 import Splash from './splash';
 import Experience from './experience';
-import Skills from '../skills/skills';
+import Skills from './skills/skills';
 import AnimatedBackground from './animatedBG';
 import Social from './social'
 
@@ -131,9 +131,7 @@ export default class HomePage extends Component {
 
         <AppSectionTwo className="app-section-two">
           <AppSection className="app-section-two-content">
-            <Skills
-              isMobile={isMobile} 
-            />
+            <Skills isMobile={isMobile} />
           </AppSection>
         </AppSectionTwo>
 
