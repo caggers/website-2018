@@ -1,30 +1,27 @@
 import React from 'react';
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const Wrapper = styled.div`
   margin: auto;
   display: grid;
-  grid-template-rows: 1fr 1fr 1.5fr 50%;
-  ${props => props.isMobile && css`
-    grid-template-rows: 0.75fr 0.75fr 0.75fr 50%
-    margin-bottom: 10%;
-  `}
+  grid-template-rows: 1.3fr 1fr 1fr;
 `
 
 const Icon = styled.img`
   height: 50px;
   width: 50px;
-  margin: auto;
+  margin: 0 auto;
 `
 
 const Header = styled.h3`
   font-family:  AmaticSC, sans-serif;
   font-size: 2rem;
+  margin: 0 auto;
 `
 
 const Text = styled.p`
-
+  margin: 0 auto;
 `
 
 const SkillsList = styled.div`
@@ -44,7 +41,7 @@ export default class SkillsColumn extends React.Component {
     return (
       <Wrapper 
         className="skills-widget-wrapper"
-        isMobile={this.props.isMobile}>
+      >
         <Icon src={icon} />
         <Header>{title} </Header>
         <Text>{text}</Text>

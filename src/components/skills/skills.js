@@ -15,7 +15,10 @@ const SkillsWidget = styled.div`
   display: grid;
   grid-gap: 2.5%;
   grid-auto-columns: 1fr 1fr 1fr;
-  padding: 50px 25px;
+  padding: 10% 5%;
+  ${props => props.isMobile && css`
+    padding-bottom: 75%;
+  `}
 `
 
 const SkillsHeader = styled.h2`
@@ -62,7 +65,7 @@ export default class Skills extends React.Component {
         <SkillsHeader className="skills-header">
           So What Do I Do?
         </SkillsHeader>
-        <SkillsWidget className="skills-widget">
+        <SkillsWidget className="skills-widget" isMobile={isMobile}>
           <SkillsSectionOne 
             className="skills-section-one"
             isMobile={isMobile}

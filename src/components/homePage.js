@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { sectionsArray } from '../util/data';
 import debounce from 'lodash/debounce';
 import { } from '../theme/globalStyle';
@@ -16,7 +16,10 @@ const AppWrapper = styled.div`
   text-align: center;
   display: grid;
   grid-gap: 25px;
-  grid-template-rows: 50% 0.4fr 0.6fr 0.5fr 0.1fr;
+  grid-template-rows: 20% 0.4fr 0.6fr 0.5fr 0.1fr;
+  ${props => props.isMobile && css`
+   grid-template-rows: 10% 0.4fr 0.6fr 0.5fr 0.1fr;
+  `}
 `
 
 const AppHeader = styled.div`
@@ -100,9 +103,9 @@ export default class HomePage extends Component {
   render() {
     const { isMobile, innerWidth } = this.state;
     return (
-      <AppWrapper className="app-wrapper">
+      <AppWrapper className="app-wrapper" isMobile={isMobile}>
         <AppHeader className="app-header">
-          <Splash className="splash"/>
+          <Splash className="splash" isMobile={isMobile} />
         </AppHeader>
 
         <AppIntro className="app-intro">
